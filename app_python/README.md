@@ -1,6 +1,8 @@
 
 # Moscow Time Web Application
 
+![](https://img.shields.io/github/workflow/status/Ilya-Kolomin/DevOps/PYTHON_APP_CI?style=for-the-badge)
+
 ## About The Project
 
 This is a simple web application that shows current time in Moscow.\
@@ -118,6 +120,27 @@ docker run -p 8000:8000 -d ilyakolomin/devops_app_python:<tag>
 ```
 
 Congratulations, now you could visit http://127.0.0.1:8000 to see current Moscow time.
+
+## Testing
+
+In order to run the unit tests for my project you will need to proceed with these commands
+
+```shell
+# for normal run
+python3 -m unittest test.py
+
+# for showing additional details
+python3 -m unittest test.py -v
+
+# for running particular test
+python3 -m unittest test.<Class>.<TestCase>
+python3 -m unittest test.AppTests.test_main_page # example
+```
+
+## CI/CD
+
+Currently, there is a CI pipeline that checks for tests and linters.
+Also, it builds docker container and pushes it to [my hub repository](https://hub.docker.com/r/ilyakolomin/devops_app_python).
 
 ## Contact
 
